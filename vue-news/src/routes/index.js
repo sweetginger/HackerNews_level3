@@ -1,0 +1,45 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+// 각 컴포넌트들을 import 한다.
+import NewsView from '../views/NewsView.vue'
+import AskView from '../views/AskView.vue'
+import JobsView from '../views/JobsView.vue'
+import ItemView from '../views/ItemView.vue'
+import UserView from '../views/UserView.vue'
+
+// use : 뷰 객체에 전역으로 사용할 수 있도록 등록한다.
+Vue.use(VueRouter);
+
+export const router = new VueRouter({
+    // url에서 /# 을 제거하려면 라우터에 mode: 'history' 를 적용한다.
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            redirect: '/news',
+        },
+        {
+            // path: url 주소
+            path: '/news',
+            // component: url 요청시 표시될 컴포넌트
+            component: NewsView,
+        },
+        {
+            path: '/ask',
+            component: AskView,
+        },
+        {
+            path: '/jobs',
+            component: JobsView,
+        },
+        {
+            path: '/itemview',
+            component: ItemView,
+        },
+        {
+            path: '/userview',
+            component: UserView,
+        }
+    ]
+});
