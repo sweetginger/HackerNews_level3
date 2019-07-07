@@ -26,9 +26,21 @@ function fetchJobsList(){
     return axios.get(`${config.baseUrl}jobs/1.json`);
 }
 
+/** userId로 user정보 받아오기 */
+function fetchUserInfo(userId){
+    return axios.get(`${config.baseUrl}user/${userId}.json`);
+}
+
+/** 글id로 글 상세정보 받아오기 */
+function fetchItemInfo(id){
+    return axios.get(`${config.baseUrl}item/${id}.json`);
+}
+
 // function들 export
 export {
     fetchNewsList
     ,fetchAskList
     ,fetchJobsList
+    ,fetchUserInfo
+    ,fetchItemInfo
 }

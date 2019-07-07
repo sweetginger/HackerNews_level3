@@ -34,11 +34,11 @@ export const router = new VueRouter({
             component: JobsView,
         },
         {
-            path: '/itemview',
+            path: '/item/:id',
             component: ItemView,
         },
         {
-            path: '/userview',
+            path: '/user/:id', // 파라미터로 넘길 변수와 값을 정의한다.
             component: UserView,
         }
     ]

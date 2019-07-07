@@ -7,5 +7,11 @@ export default {
     },
     SET_JOBS(state, payload){
         state.jobs = payload;
+    },
+    SET_USER(state, user){
+        state.user = user;
+    },
+    SET_ITEM(state, payload){
+        state.item = payload;
     }
 }
