@@ -3,7 +3,12 @@
         <p v-for="item in this.$store.state.news" :key="item.id">
             <!-- html 태그를 vue와 연결시키고 싶을 때 v-bind:속성명 으로 쓰거나 축약하여 :속성명 으로 쓸수있다 -->
             <a v-bind:href="item.url">{{ item.title }}</a>
-            <small>{{ item.time_ago }}{{ item.user }}</small>
+            <small>
+                {{ item.time_ago }} by
+                <!-- ES5 문법 : <router-link v-bind:to="'/user/' + item.user">{{ item.user }}</router-link> -->
+                <!-- 아래는 ES6 문법으로 백틱문자(`) 로 감쌌다. -->
+                <router-link v-bind:to="`/user/${item.user}`">{{ item.user }}</router-link>
+            </small>
         </p>
     </div>
 </template>
