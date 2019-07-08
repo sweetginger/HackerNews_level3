@@ -23,7 +23,17 @@ body{
   padding: 0;
   margin: 0;
 }
-
+a{
+  text-decoration: none;
+  color: #34495e;
+}
+a:hover{
+  color: #42b883;
+  text-decoration-line: underline;
+}
+a.router-link-exact-active{
+  text-decoration-line: underline;
+}
 /* Router Transition
    라우터 트랜지션은 클래스명-트랜지션동작명 으로 클래스를 생성하면 된다.
    공식문서에는 fade로 클래스명을 정의하기 때문에 css정의시 fade-트랜지션동작명 으로 정의되어있으나,
