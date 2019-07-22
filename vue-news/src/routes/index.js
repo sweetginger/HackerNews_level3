@@ -14,23 +14,27 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
     // url에서 /# 을 제거하려면 라우터에 mode: 'history' 를 적용한다.
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             path: '/',
+            name: 'main',
             redirect: '/news',
         },
         {
             // path: url 주소
             path: '/news',
+            // route name
+            name: 'news',
             // component: url 요청시 표시될 컴포넌트
             component: NewsView,
         },
         {
             path: '/ask',
+            name: 'ask',
             component: AskView,
         },
         {
             path: '/jobs',
+            name: 'jobs',
             component: JobsView,
         },
         {
